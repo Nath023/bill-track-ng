@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Track NG Utility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <header class="page-header"> <!-- Added a class for specific styling if needed -->
+            <h1>Utility Generator</h1>
+            <p class="tagline">Generate your prepaid electricity statement instantly.</p> <!-- Optional tagline -->
+        </header>
+        <!-- End Page Header -->
+
+        <main>
+            <form id="billForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name (Account Holder):</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="address">Service Address:</label>
+                    <textarea id="address" name="address" rows="3" required placeholder="Enter your service address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="meterNumber">Prepaid Meter Number:</label>
+                    <input type="tel" id="meterNumber" name="meterNumber" pattern="^\d{11}$" title="Must be exactly 11 digits (numeric only)" required placeholder="e.g., 04123456789">
+                    <small class="hint">11 digits, numbers only.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="disco">Select Your DISCO:</label>
+                    <select id="disco" name="disco" required>
+                        <option value="" disabled selected>-- Select Your Distribution Company --</option>
+                        <option value="AEDC">Abuja Electricity Distribution Company (AEDC)</option>
+                        <option value="BEDC">Benin Electricity Distribution Company (BEDC)</option>
+                        <option value="EEDC">Enugu Electricity Distribution Company (EEDC)</option>
+                        <option value="EKEDC">Eko Electricity Distribution Company (EKEDC)</option>
+                        <option value="IBEDC">Ibadan Electricity Distribution Company (IBEDC)</option>
+                        <option value="IE">Ikeja Electric Plc (IE)</option>
+                        <option value="JED">Jos Electricity Distribution Company (JED)</option>
+                        <option value="KAEDCO">Kaduna Electricity Distribution Company (KAEDCO)</option>
+                        <option value="KEDCO">Kano Electricity Distribution Company (KEDCO)</option>
+                        <option value="PHED">Port Harcourt Electricity Distribution Company (PHED)</option>
+                        <option value="YEDC">Yola Electricity Distribution Company (YEDC)</option>
+                        <!-- Add other DISCOs here if you support them in server.js -->
+                    </select>
+                </div>
+
+                <!-- 
+                    REMOVED THE FOLLOWING FORM GROUPS AS PER YOUR REQUEST:
+                    - Electricity Consumption (KWh) for Period
+                    - Statement Period Start Date
+                    - Statement Period End Date
+                    This data will now be sourced/mocked on the backend.
+                -->
+
+                <button type="submit" id="generateBtn">
+                    <span class="btn-text">Generate Statement</span>
+                    <span class="spinner" style="display: none;"></span> <!-- Spinner initially hidden -->
+                </button>
+            </form>
+            <div id="message" class="message" role="alert"></div>
+        </main>
+
+        <!-- Page Footer -->
+        <footer class="page-footer"> <!-- Added a class for specific styling if needed -->
+            <p>© 2024 Bill Track NG. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p> <!-- Optional links -->
+        </footer>
+        <!-- End Page Footer -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

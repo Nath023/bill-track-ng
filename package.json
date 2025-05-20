@@ -1,0 +1,23 @@
+{
+  "name": "utility-bill-generator",
+  "version": "1.0.0",
+  "description": "Generates utility bills in PDF format.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pdf",
+    "utility",
+    "bill",
+    "generator"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pdfkit": "^0.13.0"
+  }
+}
